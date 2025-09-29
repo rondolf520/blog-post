@@ -13,7 +13,7 @@ class Profile extends EditProfile
     {
         return $schema
             ->components([
-                FileUpload::make('avatar')->avatar()->imageEditor()->circleCropper(),
+                FileUpload::make('avatar')->avatar()->imageEditor()->disk('public')->visibility('public')->circleCropper(),
                 $this->getNameFormComponent(),
                 $this->getEmailFormComponent(),
                 $this->getPasswordFormComponent(),
